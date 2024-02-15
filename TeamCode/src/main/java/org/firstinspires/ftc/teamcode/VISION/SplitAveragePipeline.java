@@ -50,7 +50,7 @@ public class SplitAveragePipeline extends OpenCvPipeline {
         //Defining Zones
         //Rect(top left x, top left y, bottom right x, bottom right y)
         zone1 = input.submat(new Rect(0, 170, 253, 230));
-        zone2 = input.submat(new Rect(535, 170, 253, 230));
+        zone2 = input.submat(new Rect(600, 230, 100, 100));
         zone3 = input.submat(new Rect(1000, 170, 253, 230));
 
 
@@ -68,7 +68,7 @@ public class SplitAveragePipeline extends OpenCvPipeline {
         distance2 = color_distance(avgColor2, ELEMENT_COLOR);
         distance3 = color_distance(avgColor3, ELEMENT_COLOR);
 
-        if ((distance1 > 195) && (distance2 > 190) && (distance3>190)){
+        if ((distance1 > 255) && (distance2 > 255) && (distance3>255)){
             color_zone = 4;
             max_distance = -1;
         }else{
@@ -110,7 +110,7 @@ public class SplitAveragePipeline extends OpenCvPipeline {
         if (alliance.equals("red")){
             ELEMENT_COLOR = Arrays.asList(255, 0, 0);
         }else{
-            ELEMENT_COLOR = Arrays.asList(34, 34, 99);
+            ELEMENT_COLOR = Arrays.asList(0, 0, 255);
         }
     }
 
